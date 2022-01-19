@@ -14,13 +14,13 @@ library(datasauRus)
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
+A data frame with 1846 rows and 3 variables (which serve as the
+columns). The three variables are ‘dataset’, which indicates which set
+the data are from. ‘x-values’ and ‘y-values’.
 
 ### Exercise 2
 
-The answers for this exercise are given for you below. But you should
-clean up some of the narrative so that it only includes what you want to
-turn in.
+The correlation is -0.06447185.
 
 First let’s plot the data in the dino dataset:
 
