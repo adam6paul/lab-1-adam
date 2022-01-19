@@ -20,8 +20,6 @@ A data frame with 1846 rows and 3 variables (which serve as the columns). The th
 
 ### Exercise 2
 
-The correlation is -0.06447185.
-
 First let's plot the data in the dino dataset:
 
 ```{r plot-dino, fig.height=3, fig.width=6}
@@ -39,23 +37,30 @@ dino_data %>%
   summarize(r = cor(x, y))
 ```
 
+The correlation is -0.06447185.
+
 ### Exercise 3
 
-Add code and narrative as needed.
-Note that the R chunks are labeled with `plot-star` and `cor-star` to provide spaces to place the code for plotting and calculating the correlation coefficient.
-To finish, clean up the narrative by removing these instructions.
-
-
+I began by creating the data frame 'star_data', made by removing all references to dino in the original code. Specifically, a change was made in line 47 to 'star_data' and line 48 to 'star'.
 
 ```{r plot-star}
+star_data <- datasaurus_dozen %>%
+  filter(dataset == "star")
 
+ggplot(data = star_data, mapping = aes(x = x, y = y)) +
+  geom_point()
 ```
 
-I'm some filler text, you should replace me with more meaningful text...
+I adopted the text from above, making the change of swapping 'dino' out for 'star'. Since the variable names share the same root '_data' I only swapped out star.
 
 ```{r cor-star}
-
+star_data %>%
+  summarize(r = cor(x, y))
 ```
+
+The correlation is -0.0629611. 
+
+As a brief aside, it wasn't until this step that I noticed you wanted specific commit details. Therefore, this is the first one that has the proper commit information. It's also worth noting that I find committing and pushing via Git desktop a lot more intuitive, and have been doing so that way. If this is wrong for some reason, please let me know.
 
 ### Exercise 4
 
