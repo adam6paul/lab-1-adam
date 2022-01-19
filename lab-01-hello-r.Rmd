@@ -89,7 +89,24 @@ Add code and narrative as needed.
 
 To add R chunks either type out the backticks, curly braces, and the letter `r` or use the Insert chunk button above, green C+.
 
+Using the code provided, below produces the plots for all of the datasets within datasaurus_dozen.
 
+```{r facet_datasets}
+ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
+  geom_point()+
+  facet_wrap(~ dataset, ncol = 3) +
+  theme(legend.position = "none")
+```
+
+The naming convention of the next chunk breaks with the others used above, but represents my preferred ordering of variable names. Shannon likes to have the set first, then the specific, and I write that way as well.
+
+```{r datasets_cor}
+datasaurus_dozen %>%
+  group_by(dataset) %>%
+  summarize(r = cor(x, y)) %>%
+  print(13)
+```
+All of the correlations are extremely close, despite representing wildly different datasets.
 
 ## Bonus Tips by Yoo Ri
 
